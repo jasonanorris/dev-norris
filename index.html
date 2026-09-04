@@ -95,9 +95,9 @@
       .mobile-logo {
         position: absolute;
         z-index: 6;
-        top: clamp(9.5rem, 24svh, 14rem);
+        top: clamp(7rem, 18svh, 10rem);
         left: 50%;
-        width: min(91vw, 36rem);
+        width: min(88vw, 31rem);
         height: auto;
         transform: translateX(-50%);
         mix-blend-mode: multiply;
@@ -106,9 +106,9 @@
       .landscape {
         position: absolute;
         z-index: 3;
-        left: -12%;
+        left: 0;
         bottom: -1px;
-        width: 185%;
+        width: max(280vw, 88rem);
         height: 42svh;
         object-fit: cover;
         object-position: left bottom;
@@ -148,7 +148,7 @@
       }
 
       .stripe-set--cool {
-        right: -27rem;
+        right: -28rem;
         bottom: 1rem;
         height: 15rem;
       }
@@ -173,8 +173,12 @@
     }
 
     @media (max-width: 420px) and (min-height: 720px) {
-      .mobile-logo { top: 22svh; }
-      .landscape { height: 39svh; width: 195%; }
+      .mobile-logo { top: clamp(7.5rem, 17svh, 9rem); }
+      .landscape {
+        height: 40svh;
+        width: max(315vw, 84rem);
+      }
+      .stripe-set--cool { right: -30rem; }
     }
 
     @media (max-height: 560px) and (orientation: landscape) {
