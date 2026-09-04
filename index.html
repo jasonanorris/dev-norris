@@ -87,21 +87,7 @@
         inset: 0;
         display: block;
         overflow: hidden;
-        background:
-          radial-gradient(circle at 55% 38%, rgba(255,255,255,.82), transparent 42%),
-          var(--paper);
-      }
-
-      .mobile-art::before {
-        content: "";
-        position: absolute;
-        z-index: 4;
-        inset: 0 0 auto;
-        height: 51svh;
-        background:
-          linear-gradient(to bottom, var(--paper) 0 86%, rgba(245,240,229,.94) 92%, rgba(245,240,229,0) 100%),
-          radial-gradient(circle at 55% 38%, rgba(255,255,255,.82), transparent 42%),
-          var(--paper);
+        background: var(--paper);
       }
 
       .mobile-logo {
@@ -124,71 +110,11 @@
         object-fit: cover;
         object-position: 18% bottom;
       }
-
-      .stripe-set {
-        position: absolute;
-        z-index: 5;
-        width: 38rem;
-        height: 11rem;
-        transform: rotate(-33deg);
-        pointer-events: none;
-      }
-
-      .stripe-set span {
-        position: absolute;
-        left: 0;
-        right: 0;
-        display: block;
-      }
-
-      .stripe-set--warm {
-        top: -5rem;
-        left: -25rem;
-      }
-
-      .stripe-set--warm span:first-child {
-        top: 0;
-        height: 4.2rem;
-        background: var(--yellow);
-      }
-
-      .stripe-set--warm span:last-child {
-        top: 5rem;
-        height: 6rem;
-        background: var(--coral);
-      }
-
-      .stripe-set--cool {
-        right: -25rem;
-        bottom: 3svh;
-        width: 62rem;
-        height: 17rem;
-      }
-
-      .stripe-set--cool span:nth-child(1) {
-        top: 0;
-        height: 5.6rem;
-        background: var(--aqua);
-      }
-
-      .stripe-set--cool span:nth-child(2) {
-        top: 5.6rem;
-        height: 5.6rem;
-        background: var(--blue);
-      }
-
-      .stripe-set--cool span:nth-child(3) {
-        top: 11.2rem;
-        height: 5.6rem;
-        background: var(--deep-blue);
-      }
     }
 
     @media (max-width: 420px) and (min-height: 720px) {
       .mobile-logo { top: clamp(7.5rem, 17svh, 9rem); }
-      .mobile-art::before { height: 50svh; }
       .landscape { object-position: 16% bottom; }
-      .stripe-set--cool { right: -31rem; bottom: 2svh; }
     }
 
     @media (max-height: 560px) and (orientation: landscape) {
@@ -222,10 +148,8 @@
     >
 
     <div class="mobile-art" aria-hidden="true">
-      <div class="stripe-set stripe-set--warm"><span></span><span></span></div>
       <img class="mobile-logo" src="assets/dev-norris-logo.webp" alt="" width="720" height="380">
-      <img class="landscape" src="assets/retro-mountain-lake.png" alt="" width="1536" height="1024">
-      <div class="stripe-set stripe-set--cool"><span></span><span></span><span></span></div>
+      <img class="landscape" src="assets/clean-bg.png" alt="" width="1536" height="1024">
     </div>
 
     <div class="paper-grain" aria-hidden="true"></div>
