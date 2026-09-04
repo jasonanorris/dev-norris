@@ -57,6 +57,41 @@
 
     .mobile-art { display: none; }
 
+    .site-nav {
+      position: absolute;
+      z-index: 12;
+      top: clamp(29rem, 68svh, 42rem);
+      left: 50%;
+      display: flex;
+      justify-content: center;
+      gap: clamp(2.75rem, 6vw, 5rem);
+      width: min(58rem, 88vw);
+      transform: translateX(-50%);
+    }
+
+    .site-nav a {
+      color: rgba(6, 25, 45, .78);
+      font-size: clamp(.86rem, 1.5vw, 1.05rem);
+      font-weight: 400;
+      letter-spacing: .48em;
+      line-height: 1;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-indent: .48em;
+      transition: color 160ms ease, opacity 160ms ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      color: var(--navy);
+      opacity: 1;
+    }
+
+    .site-nav a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: .45rem;
+    }
+
     .paper-grain {
       position: absolute;
       inset: 0;
@@ -110,11 +145,33 @@
         object-fit: cover;
         object-position: 18% bottom;
       }
+
+      .site-nav {
+        top: clamp(22rem, 48svh, 30rem);
+        gap: clamp(1.35rem, 6vw, 2.75rem);
+        width: min(30rem, 92vw);
+      }
+
+      .site-nav a {
+        font-size: clamp(.72rem, 2.7vw, .9rem);
+        letter-spacing: .42em;
+        text-indent: .42em;
+      }
     }
 
     @media (max-width: 420px) and (min-height: 720px) {
       .mobile-logo { top: clamp(7.5rem, 17svh, 9rem); }
       .landscape { object-position: 16% bottom; }
+      .site-nav {
+        top: clamp(21rem, 47svh, 27rem);
+        gap: clamp(1rem, 5vw, 1.75rem);
+      }
+
+      .site-nav a {
+        font-size: clamp(.66rem, 2.6vw, .78rem);
+        letter-spacing: .36em;
+        text-indent: .36em;
+      }
     }
 
     @media (max-height: 560px) and (orientation: landscape) {
@@ -135,7 +192,7 @@
   </style>
 </head>
 <body>
-  <main class="poster" aria-labelledby="site-title">
+  <main id="home" class="poster" aria-labelledby="site-title">
     <h1 id="site-title" class="sr-only">Dev Norris</h1>
 
     <img
@@ -151,6 +208,12 @@
       <img class="mobile-logo" src="assets/dev-norris-logo.webp" alt="" width="720" height="380">
       <img class="landscape" src="assets/clean-bg.png" alt="" width="1536" height="1024">
     </div>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#demo">Demo</a>
+      <a href="#projects">Projects</a>
+    </nav>
 
     <div class="paper-grain" aria-hidden="true"></div>
   </main>
