@@ -55,29 +55,40 @@
       transition: transform 180ms ease-out;
     }
 
-    .desktop-logo {
+    .desktop-lockup {
       position: absolute;
-      z-index: 6;
+      z-index: 12;
       top: clamp(2.5rem, 7svh, 4.75rem);
       left: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: min(82.5vw, 94.5rem);
-      height: auto;
       transform: translateX(-50%);
       pointer-events: none;
+    }
+
+    .desktop-logo {
+      width: 100%;
+      height: auto;
     }
 
     .mobile-art { display: none; }
 
     .site-nav {
-      position: absolute;
-      z-index: 12;
-      top: clamp(29rem, 68svh, 42rem);
-      left: 50%;
       display: flex;
       justify-content: center;
       gap: clamp(2.75rem, 6vw, 5rem);
       width: min(58rem, 88vw);
-      transform: translateX(-50%);
+    }
+
+    .desktop-nav {
+      margin-top: clamp(-5rem, -7vw, -3.25rem);
+      pointer-events: auto;
+    }
+
+    .mobile-nav {
+      display: none;
     }
 
     .site-nav a {
@@ -127,7 +138,7 @@
 
     @media (max-aspect-ratio: 4 / 5) {
       .desktop-art,
-      .desktop-logo { display: none; }
+      .desktop-lockup { display: none; }
 
       .mobile-art {
         position: absolute;
@@ -158,10 +169,15 @@
         object-position: 18% bottom;
       }
 
-      .site-nav {
+      .mobile-nav {
+        position: absolute;
+        z-index: 12;
         top: clamp(22rem, 48svh, 30rem);
+        left: 50%;
+        display: flex;
         gap: clamp(1.35rem, 6vw, 2.75rem);
         width: min(30rem, 92vw);
+        transform: translateX(-50%);
       }
 
       .site-nav a {
@@ -174,7 +190,7 @@
     @media (max-width: 420px) and (min-height: 720px) {
       .mobile-logo { top: clamp(7.5rem, 17svh, 9rem); }
       .landscape { object-position: 16% bottom; }
-      .site-nav {
+      .mobile-nav {
         top: clamp(21rem, 47svh, 27rem);
         gap: clamp(1rem, 5vw, 1.75rem);
       }
@@ -216,21 +232,29 @@
       fetchpriority="high"
     >
 
-    <img
-      class="desktop-logo"
-      src="assets/large_logo.png"
-      alt=""
-      width="1717"
-      height="916"
-      fetchpriority="high"
-    >
+    <div class="desktop-lockup">
+      <img
+        class="desktop-logo"
+        src="assets/large_logo.png"
+        alt=""
+        width="1717"
+        height="916"
+        fetchpriority="high"
+      >
+
+      <nav class="site-nav desktop-nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#demo">Demo</a>
+        <a href="#projects">Projects</a>
+      </nav>
+    </div>
 
     <div class="mobile-art" aria-hidden="true">
       <img class="mobile-logo" src="assets/dev-norris-logo.webp" alt="" width="720" height="380">
       <img class="landscape" src="assets/clean-bg.png" alt="" width="1536" height="1024">
     </div>
 
-    <nav class="site-nav" aria-label="Primary">
+    <nav class="site-nav mobile-nav" aria-label="Primary">
       <a href="#home">Home</a>
       <a href="#demo">Demo</a>
       <a href="#projects">Projects</a>
