@@ -15,8 +15,6 @@
       --aqua: #3bc1bf;
       --blue: #0d7896;
       --deep-blue: #0a3854;
-      --pointer-x: 0px;
-      --pointer-y: 0px;
     }
 
     * { box-sizing: border-box; }
@@ -51,8 +49,7 @@
       height: 102.5%;
       object-fit: cover;
       object-position: center;
-      transform: translate3d(var(--pointer-x), var(--pointer-y), 0) scale(1.012);
-      transition: transform 180ms ease-out;
+      transform: scale(1.012);
     }
 
     .desktop-lockup {
@@ -105,7 +102,7 @@
 
     .site-nav a:hover,
     .site-nav a:focus-visible {
-      color: var(--navy);
+      color: var(--coral);
       opacity: 1;
     }
 
@@ -211,12 +208,6 @@
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .desktop-art {
-        transition: none;
-        transform: scale(1.012);
-      }
-    }
   </style>
 </head>
 <body>
@@ -262,29 +253,5 @@
 
     <div class="paper-grain" aria-hidden="true"></div>
   </main>
-
-  <script>
-    (() => {
-      const root = document.documentElement;
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const finePointer = window.matchMedia('(pointer: fine)');
-
-      const reset = () => {
-        root.style.setProperty('--pointer-x', '0px');
-        root.style.setProperty('--pointer-y', '0px');
-      };
-
-      window.addEventListener('pointermove', (event) => {
-        if (reduceMotion.matches || !finePointer.matches) return;
-        const x = ((event.clientX / window.innerWidth) - 0.5) * -8;
-        const y = ((event.clientY / window.innerHeight) - 0.5) * -6;
-        root.style.setProperty('--pointer-x', `${x.toFixed(2)}px`);
-        root.style.setProperty('--pointer-y', `${y.toFixed(2)}px`);
-      }, { passive: true });
-
-      window.addEventListener('pointerleave', reset);
-      reduceMotion.addEventListener?.('change', reset);
-    })();
-  </script>
 </body>
 </html>
