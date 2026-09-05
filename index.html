@@ -60,7 +60,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: clamp(.75rem, 1.4vw, 1.5rem);
+      gap: clamp(.25rem, .7vw, .65rem);
       width: min(82.5vw, 94.5rem);
       transform: translateX(-50%);
       pointer-events: none;
@@ -69,6 +69,7 @@
     .desktop-logo {
       width: 100%;
       height: auto;
+      margin-bottom: calc(min(82.5vw, 94.5rem) * -.0326);
     }
 
     .mobile-art { display: none; }
