@@ -2,8 +2,10 @@
   <rect width="256" height="256" rx="48" fill="#06192d"/>
 
   <!-- Geometric DN monogram, drawn as paths so the favicon needs no font. -->
-  <path fill="#f5f0e5" fill-rule="evenodd" d="M34 42h55c34 0 53 19 53 52v25c0 33-19 52-53 52H34V42zm31 28v73h22c16 0 24-9 24-27V97c0-18-8-27-24-27H65z"/>
-  <path fill="#f5f0e5" d="M151 42h27l39 72V42h31v129h-27l-39-72v72h-31V42z"/>
+  <g transform="translate(-13 0)">
+    <path fill="#f5f0e5" fill-rule="evenodd" d="M34 42h55c34 0 53 19 53 52v25c0 33-19 52-53 52H34V42zm31 28v73h22c16 0 24-9 24-27V97c0-18-8-27-24-27H65z"/>
+    <path fill="#f5f0e5" d="M151 42h27l39 72V42h31v129h-27l-39-72v72h-31V42z"/>
+  </g>
 
   <path fill="#f5cc4e" d="M34 188h67v18H34z"/>
   <path fill="#f34d45" d="M101 188h57v18h-57z"/>
