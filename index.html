@@ -55,6 +55,17 @@
       transition: transform 180ms ease-out;
     }
 
+    .desktop-logo {
+      position: absolute;
+      z-index: 6;
+      top: clamp(8.75rem, 23.5svh, 15rem);
+      left: 50%;
+      width: min(55vw, 63rem);
+      height: auto;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
     .mobile-art { display: none; }
 
     .site-nav {
@@ -115,7 +126,8 @@
     }
 
     @media (max-aspect-ratio: 4 / 5) {
-      .desktop-art { display: none; }
+      .desktop-art,
+      .desktop-logo { display: none; }
 
       .mobile-art {
         position: absolute;
@@ -197,10 +209,19 @@
 
     <img
       class="desktop-art"
-      src="assets/retro-mountain-lake.png"
+      src="assets/bg_no_logo.png"
       alt=""
       width="1536"
       height="1024"
+      fetchpriority="high"
+    >
+
+    <img
+      class="desktop-logo"
+      src="assets/large_logo.png"
+      alt=""
+      width="1717"
+      height="916"
       fetchpriority="high"
     >
 
